@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <template name="Category list extra" id="categories_recursive_extra">
+        <li t-att-class="' '.join(('active' if c.id is not False else '',
+                                   'has-children' if c.child_id else ''))">
+            <t t-if="c.child_id">
+                <a href="#">
+                    <span t-field="c.name"/>
+                    <i class="fa fa-chevron-right pull-right"/>
+                </a>
+            </t>
+            <t t-if="not c.child_id">
+                <a t-att-href="keep('/shop/category/' + slug(c), category=0)"
+                   t-field="c.name"/>
+            </t>
+
+            <ul t-if="c.child_id"
+                class="nav nav-pills nav-stacked nav-hierarchy is-hidden">
+                <li class="go-back">
+                    <a href="#">
+                        <i class="fa fa-chevron-left"/>
+                    </a>
+                </li>
+                <t t-foreach="c.child_id" t-as="c">
+                    <t t-call="website_sale_category_megamenu.categories_recursive_extra"/>
+                </t>
+            </ul>
+        </li>
+    </template>
+
+    <template id="breadcrumbs" name="Recursive breadcrumbs">
+        <t t-if="current_category.parent_id">
+            <t t-set="old_category" t-value="current_category"/>
+            <t t-set="current_category"
+               t-value="current_category.parent_id"/>
+            <t t-call="website_sale_category_megamenu.breadcrumbs"/>
+            <t t-set="current_category" t-value="old_category"/>
+        </t>
+
+        <li t-if="not current_category.parent_id">
+            <a t-att-href="keep(category=0)">
+                Shop
+            </a>
+        </li>
+
+        <li>
+            <a t-att-href="keep(
+                    '/shop/category/%s' % slug(current_category),
+                    category=0)"
+               t-field="current_category.name"/>
+        </li>
+    </template>
+
+    <template id="category_grid"
+              inherit_id="website_sale.products"
+              name="Product Categories Grid">
+        <xpath expr="//t[@t-call='website_sale.search']" position="after">
+            <t t-if="category">
+                <div class="text-center mt92 mb92">
+                    <h2 t-field="category.name"/>
+                    <ol class="breadcrumb">
+                        <t t-set="current_category" t-value="category"/>
+                        <t t-call="website_sale_category_megamenu.breadcrumbs"/>
+                    </ol>
+                </div>
+            </t>
+            <t t-if="not category">
+                <div class="text-center mt92 mb92">
+                    <h2>Products</h2>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-call='website_sale.search']"
+               position="before">
+
+            <div class="navbar">
+                <ul id="categories_megamenu"
+                    class="nav navbar-nav navbar-right">
+
+                    <t t-foreach="categories" t-as="c">
+                        <li t-att-class="' '.join(
+                                ('dropdown',
+                                 'active' if c.id is not False else ''))">
+
+                            <t t-if="c.child_id">
+                                <a href="#"
+                                   class="dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   t-field="c.name"/>
+                            </t>
+
+                            <t t-if="not c.child_id">
+                                <a t-att-href="keep(
+                                    '/shop/category/' + slug(c),
+                                    category=0)"
+                                   t-field="c.name"/>
+                            </t>
+
+                            <ul t-if="c.child_id"
+                                class="dropdown-menu"
+                                role="menu">
+
+                                <div class="container">
+                                    <t t-foreach="c.child_id" t-as="c">
+                                        <t t-call="website_sale_category_megamenu.categories_recursive_extra"/>
+                                        <t t-if="c_odd">
+                                            <div t-att-class="' '.join(
+                                                ('clearfix',
+                                                 'hidden-lg'
+                                                    if (c_index + 1) % 4 != 0
+                                                    else ''))"/>
+                                            <hr t-att-class="
+                                                'hidden-lg'
+                                                if (c_index + 1) % 4 != 0
+                                                else ''"/>
+                                        </t>
+                                    </t>
+                                </div>
+                            </ul>
+                        </li>
+                    </t>
+                </ul>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="product_view" inherit_id="website_sale.product" name="Product View">
+        <xpath expr="//ol[@class='breadcrumb']/.." position="attributes">
+            <attribute name="class">col-sm-7 col-md-7 col-lg-7</attribute>
+        </xpath>
+        <xpath expr="//t[@t-call='website_sale.search']/.." position="attributes">
+            <attribute name="class">col-xs-3 pull-right</attribute>
+        </xpath>
+    </template>
+
+</data>
+</openerp>
