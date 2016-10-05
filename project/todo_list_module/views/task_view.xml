@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009-2016 Trobz
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <record id="view_task_tree" model="ir.ui.view">
+            <field name="name">view.task.tree</field>
+            <field name="model">task</field>
+            <field name="arch" type="xml">
+                <tree string="Tags">
+                    <field name="sequence" widget="handle" />
+                    <field name="stage_seq" invisible="1" />
+                    <field name="name" />
+                    <field name="assignee_id" />
+                    <field name="priority" />
+                    <field name="date_deadline" />
+                    <field name="stage_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_task_form" model="ir.ui.view">
+            <field name="name">view.task.form</field>
+            <field name="model">task</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Name" />
+                            <h1>
+                                <field name="name" class="oe_inline" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="assignee_id" />
+                                <field name="priority" />
+                                <field name="date_deadline" />
+                            </group>
+                            <group>
+                                <field name="tag_ids" widget="many2many_tags" />
+                                <field name="sequence" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description" nolabel="1"
+                                placeholder="Description..." />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_task_search" model="ir.ui.view">
+            <field name="name">view.task.search</field>
+            <field name="model">task</field>
+            <field name="arch" type="xml">
+                <search string="Tags">
+                    <field name="name" />
+                    <field name="assignee_id" />
+                    <field name="priority" />
+                    <group string="Filters">
+                        <filter string="Deadline: Today" name="filter_date_deadline_today"
+                            domain="[('date_deadline','=', datetime.datetime.combine(context_today(), datetime.time(0,0,0)))]"
+                        />
+                    </group>
+                    <group expand="0" string="Group By">
+                        <filter name="groupby_assignee_id" string="Assignee"
+                            context="{'group_by':'assignee_id'}" />
+                        <filter name="groupby_date_deadline_date" string="Deadline Date"
+                            context="{'group_by':'date_deadline:day'}" />
+                        <filter name="groupby_date_deadline_month" string="Deadline Month"
+                            context="{'group_by':'date_deadline'}" />
+                        <filter name="groupby_priority" string="Priority"
+                            context="{'group_by':'priority'}" />
+                        <filter name="groupby_stage_id" string="Stage"
+                            context="{'group_by':'stage_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_all_tasks" model="ir.actions.act_window">
+            <field name="name">All Tasks</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">task</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_my_tasks" model="ir.actions.act_window">
+            <field name="name">My Tasks</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">task</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('assignee_id', '=', uid)]</field>
+        </record>
+    </data>
+</openerp>

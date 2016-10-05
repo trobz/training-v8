@@ -31,7 +31,10 @@ To use this module, you need to:
 Known issues / Roadmap
 ======================
 
-* ...
+* This module is created with the sole purpose is to demonstrate the different
+  elements in programming in Odoo. The design choice is, therefore, not the
+  best choice. For example, the model `todo_task` should derive from
+  `project_task`.
 
 Bug Tracker
 ===========

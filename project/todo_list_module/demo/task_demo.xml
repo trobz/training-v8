@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009-2016 Trobz
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+
+    <record id="task_demo_1" model="task">
+        <field name="name">Prepare the slides for lab sessions</field>
+        <field name="sequence" eval="10"/>
+        <field name="description">4-6 weeks</field>
+        <field name="date_deadline">2016-10-17</field>
+        <field name="priority">3</field>
+        <field name="stage_id" ref="task_stage_demo_wip"/>
+        <field name="tag_ids" eval="[(4, ref('task_tag_demo_uit')),
+                                     (4, ref('task_tag_demo_odoo')),
+                                     (4, ref('task_tag_demo_trobz')),
+                                     (4, ref('task_tag_demo_work'))]"/>
+    </record>
+
+    <record id="task_demo_2" model="task">
+        <field name="name">Prepare exercises for lab sessions</field>
+        <field name="sequence" eval="20"/>
+        <field name="description">4-6 weeks</field>
+        <field name="date_deadline">2016-10-17</field>
+        <field name="priority">3</field>
+        <field name="stage_id" ref="task_stage_demo_planning"/>
+        <field name="tag_ids" eval="[(4, ref('task_tag_demo_uit')),
+                                     (4, ref('task_tag_demo_odoo')),
+                                     (4, ref('task_tag_demo_trobz')),
+                                     (4, ref('task_tag_demo_work'))]"/>
+    </record>
+
+    <record id="task_demo_3" model="task">
+        <field name="name">Gather learning resources</field>
+        <field name="sequence" eval="30"/>
+        <field name="date_deadline">2016-10-17</field>
+        <field name="priority">2</field>
+        <field name="stage_id" ref="task_stage_demo_wip"/>
+        <field name="tag_ids" eval="[(4, ref('task_tag_demo_uit')),
+                                     (4, ref('task_tag_demo_odoo')),
+                                     (4, ref('task_tag_demo_trobz')),
+                                     (4, ref('task_tag_demo_work'))]"/>
+    </record>
+
+    <record id="task_demo_4" model="task">
+        <field name="name">Read "Lean In"</field>
+        <field name="sequence" eval="40"/>
+        <field name="priority">2</field>
+        <field name="stage_id" ref="task_stage_demo_planning"/>
+        <field name="tag_ids" eval="[(4, ref('task_tag_demo_leisure')),
+                                     (4, ref('task_tag_demo_book'))]"/>
+    </record>
+
+    <record id="task_demo_5" model="task">
+        <field name="name">Read "A find balance"</field>
+        <field name="sequence" eval="50"/>
+        <field name="priority">2</field>
+        <field name="stage_id" ref="task_stage_demo_planning"/>
+        <field name="tag_ids" eval="[(4, ref('task_tag_demo_leisure')),
+                                     (4, ref('task_tag_demo_book'))]"/>
+    </record>
+
+    <record id="task_demo_6" model="task">
+        <field name="name">Read "What the Dog Saw"</field>
+        <field name="sequence" eval="60"/>
+        <field name="priority">2</field>
+        <field name="stage_id" ref="task_stage_demo_planning"/>
+        <field name="tag_ids" eval="[(4, ref('task_tag_demo_leisure')),
+                                     (4, ref('task_tag_demo_book'))]"/>
+    </record>
+
+    <record id="task_demo_7" model="task">
+        <field name="name">Buy new soccer shoes</field>
+        <field name="sequence" eval="70"/>
+        <field name="priority">2</field>
+        <field name="stage_id" ref="task_stage_demo_planning"/>
+        <field name="tag_ids" eval="[(4, ref('task_tag_demo_shopping'))]"/>
+    </record>
+
+    <record id="task_demo_8" model="task">
+        <field name="name">Visit Bhutan</field>
+        <field name="sequence" eval="80"/>
+        <field name="priority">1</field>
+        <field name="stage_id" ref="task_stage_demo_planning"/>
+        <field name="tag_ids" eval="[(4, ref('task_tag_demo_travelling'))]"/>
+    </record>
+
+    </data>
+</openerp>

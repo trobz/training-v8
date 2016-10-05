@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009-2016 Trobz
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+
+    <record id="task_tag_demo_uit" model="task.tag">
+        <field name="name">UIT</field>
+        <field name="sequence" eval="10"/>
+        <field name="description">University of Information Technology - HCMC National University - Vietnam</field>
+    </record>
+
+    <record id="task_tag_demo_odoo" model="task.tag">
+        <field name="name">Odoo</field>
+        <field name="sequence" eval="20"/>
+        <field name="description">Odoo (OpenERP) - odoo.com</field>
+    </record>
+
+    <record id="task_tag_demo_trobz" model="task.tag">
+        <field name="name">Trobz</field>
+        <field name="sequence" eval="30"/>
+        <field name="description">Trobz - Open Source Solution for the Enterprise - trobz.com</field>
+    </record>
+
+    <record id="task_tag_demo_leisure" model="task.tag">
+        <field name="name">Leisure</field>
+        <field name="sequence" eval="40"/>
+        <field name="description">Leisure Activities</field>
+    </record>
+
+    <record id="task_tag_demo_work" model="task.tag">
+        <field name="name">Work</field>
+        <field name="sequence" eval="50"/>
+        <field name="description">Work Tasks</field>
+    </record>
+
+    <record id="task_tag_demo_book" model="task.tag">
+        <field name="name">Book</field>
+        <field name="sequence" eval="60"/>
+        <field name="description">Books to read</field>
+    </record>
+
+    <record id="task_tag_demo_travelling" model="task.tag">
+        <field name="name">Travelling</field>
+        <field name="sequence" eval="70"/>
+        <field name="description">Travelling</field>
+    </record>
+
+    <record id="task_tag_demo_shopping" model="task.tag">
+        <field name="name">Shopping</field>
+        <field name="sequence" eval="80"/>
+        <field name="description">Shopping</field>
+    </record>
+
+    </data>
+</openerp>

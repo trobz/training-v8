@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009-2016 Trobz
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <record id="view_task_stage_tree" model="ir.ui.view">
+            <field name="name">view.task.stage.tree</field>
+            <field name="model">task.stage</field>
+            <field name="arch" type="xml">
+                <tree string="Stages">
+                    <field name="sequence" widget="handle" />
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_task_stage_form" model="ir.ui.view">
+            <field name="name">view.task.stage.form</field>
+            <field name="model">task.stage</field>
+            <field name="arch" type="xml">
+                <form string="Stage">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Name" />
+                            <h1>
+                                <field name="name" class="oe_inline" />
+                            </h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons">
+                            <button class="oe_inline oe_stat_button"
+                                type="object" name="view_related_tasks" 
+                                icon="fa-tasks">
+                                <field string="Tasks" name="task_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="sequence" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description" nolabel="1"
+                                placeholder="Description..." />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_task_stage_search" model="ir.ui.view">
+            <field name="name">view.task.stage.search</field>
+            <field name="model">task.stage</field>
+            <field name="arch" type="xml">
+                <search string="Stages">
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_task_stage" model="ir.actions.act_window">
+            <field name="name">Stages</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">task.stage</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</openerp>

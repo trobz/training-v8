@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright <YEAR(S)> <AUTHOR(S)>
+# Copyright (C) 2009-2016 Trobz
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from . import model_name
+from . import task_stage
+from . import task_tag
+from . import task

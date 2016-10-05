@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009-2016 Trobz
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+
+    <record id="task_stage_demo_planning" model="task.stage">
+        <field name="name">Planning</field>
+        <field name="sequence" eval="10"/>
+    </record>
+
+    <record id="task_stage_demo_wip" model="task.stage">
+        <field name="name">WIP</field>
+        <field name="sequence" eval="20"/>
+    </record>
+
+    <record id="task_stage_demo_qa" model="task.stage">
+        <field name="name">QA - Feedback</field>
+        <field name="sequence" eval="30"/>
+    </record>
+
+    <record id="task_stage_demo_done" model="task.stage">
+        <field name="name">Done</field>
+        <field name="sequence" eval="40"/>
+    </record>
+
+    <record id="task_stage_demo_pending" model="task.stage">
+        <field name="name">Pending</field>
+        <field name="sequence" eval="50"/>
+    </record>
+
+    <record id="task_stage_demo_cancelled" model="task.stage">
+        <field name="name">Cancelled</field>
+        <field name="sequence" eval="60"/>
+    </record>
+
+    </data>
+</openerp>

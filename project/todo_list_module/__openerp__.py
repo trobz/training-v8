@@ -4,7 +4,7 @@
 {
     "name": "TODOs List",
     "summary": "Simple TODOs List",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.0.1",
     "category": "Trobz Training",
     "website": "https://trobz.com/",
     "author": "Trobz",
@@ -12,27 +12,31 @@
     "application": False,
     "installable": True,
     "auto_install": False,
-    # "pre_init_hook": "pre_init_hook",
-    # "post_init_hook": "post_init_hook",
-    # "post_load": "post_load",
-    # "uninstall_hook": "uninstall_hook",
     "external_dependencies": {
         "python": [],
         "bin": [],
     },
     "depends": [
-        "base",
+        "mail"
     ],
     "data": [
         # data
         # security
         # wizards
         # views
+        'views/task_stage_view.xml',
+        'views/task_tag_view.xml',
+        'views/task_view.xml',
         # reports
         # menus
+        'views/task_menu.xml'
     ],
-    "demo": [],
-    "css": [],
-    "js": [],
-    "qweb": []
+    "demo": [
+        'demo/task_stage_demo.xml',
+        'demo/task_tag_demo.xml',
+        'demo/task_demo.xml',
+    ],
+    "css": ['static/src/js/*.css'],
+    "js": ['static/src/js/*.js'],
+    "qweb": ['static/src/js/*.xml']
 }

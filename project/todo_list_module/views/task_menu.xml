@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009-2016 Trobz
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <!-- Root menu Trobz Training -->
+        <menuitem id="menu_trobz_training"
+            name="Trobz Training"
+            sequence="1" />
+
+        <!-- Menu Trobz Training > TODOs List -->
+        <menuitem id="menu_trobz_training_tasks_list"
+            name="TODOs List"
+            parent="menu_trobz_training"
+            sequence="10" />
+
+        <!-- Menu Trobz Training > TODOs List > All TODOs -->
+        <menuitem id="menu_trobz_training_all_tasks"
+            name="All TODOs"
+            parent="menu_trobz_training_tasks_list"
+            action="action_all_tasks"
+            sequence="11" />
+
+        <!-- Menu Trobz Training > TODOs List > My TODOs -->
+        <menuitem id="menu_trobz_training_my_tasks"
+            name="My TODOs"
+            parent="menu_trobz_training_tasks_list"
+            action="action_my_tasks"
+            sequence="12" />
+
+        <!-- Menu Trobz Training > Configuration -->
+        <menuitem id="menu_trobz_training_task_configuration"
+            name="Configuration"
+            parent="menu_trobz_training"
+            sequence="20" />
+
+        <!-- Menu Trobz Training > Configuration > Stages -->
+        <menuitem id="menu_trobz_training_stages"
+            name="Stages"
+            parent="menu_trobz_training_task_configuration"
+            action="action_task_stage"
+            sequence="21" />
+
+        <!-- Menu Trobz Training > Configuration > Tags -->
+        <menuitem id="menu_trobz_training_tags"
+            name="Tags"
+            parent="menu_trobz_training_task_configuration"
+            action="action_task_tag"
+            sequence="22" />
+    </data>
+</openerp>
