@@ -17,6 +17,11 @@ class TaskStage(models.Model):
 
     task_count = fields.Integer('Tasks Count', compute='_compute_task_count')
 
+    _sql_constraints = [
+        ('unique_task_stage_name', 'UNIQUE(name)',
+         'Stage name must be unique!')
+    ]
+
     @api.multi
     def _compute_task_count(self):
         """

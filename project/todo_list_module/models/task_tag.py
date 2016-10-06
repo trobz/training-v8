@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api
-from openerp.tools.translate import _
 
 
 class TaskTag(models.Model):
@@ -17,6 +16,10 @@ class TaskTag(models.Model):
     active = fields.Boolean('Active', default=True)
 
     task_count = fields.Integer('Tasks Count', compute='_compute_task_count')
+
+    _sql_constraints = [
+        ('unique_task_tag_name', 'UNIQUE(name)', 'Tag name must be unique!')
+    ]
 
     @api.multi
     def _compute_task_count(self):
