@@ -8,7 +8,7 @@
             <field name="name">view.task.tree</field>
             <field name="model">task</field>
             <field name="arch" type="xml">
-                <tree string="Tags">
+                <tree string="Tasks">
                     <field name="sequence" widget="handle" />
                     <field name="stage_seq" invisible="1" />
                     <field name="name" />
@@ -24,7 +24,7 @@
             <field name="name">view.task.form</field>
             <field name="model">task</field>
             <field name="arch" type="xml">
-                <form string="Tag">
+                <form string="Task">
                     <sheet>
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only" string="Name" />
@@ -56,7 +56,7 @@
             <field name="name">view.task.search</field>
             <field name="model">task</field>
             <field name="arch" type="xml">
-                <search string="Tags">
+                <search string="Tasks">
                     <field name="name" />
                     <field name="assignee_id" />
                     <field name="priority" />

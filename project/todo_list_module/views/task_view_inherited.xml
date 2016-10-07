@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009-2016 Trobz
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <record id="view_task_form_inherited_extension" model="ir.ui.view">
+            <field name="name">view.task.form</field>
+            <field name="model">task</field>
+            <field name="inherit_id" ref="todo_list_module.view_task_form"/>
+            <field name="arch" type="xml">
+                <field name="sequence" position="replace"/>
+                <field name="tag_ids" position="before">
+                    <field name="sequence"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_task_form_inherited_primary" model="ir.ui.view">
+            <field name="name">view.task.form</field>
+            <field name="model">task</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="todo_list_module.view_task_form"/>
+            <field name="arch" type="xml">
+                <field name="sequence" position="replace"/>
+                <field name="tag_ids" position="replace"/>
+            </field>
+        </record>
+
+        <record id="action_tasks_test_inheritance_primary" model="ir.actions.act_window">
+            <field name="name">Tasks - Inheritance with primary mode</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">task</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids"
+                eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_task_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_task_form_inherited_primary')})]" />
+            <field name="search_view_id" ref="view_task_search" />
+        </record>
+    </data>
+</openerp>

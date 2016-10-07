@@ -27,6 +27,7 @@
         'views/task_stage_view.xml',
         'views/task_tag_view.xml',
         'views/task_view.xml',
+        'views/task_view_inherited.xml',
         # reports
         # menus
         'views/task_menu.xml'

@@ -48,5 +48,18 @@
             parent="menu_trobz_training_task_configuration"
             action="action_task_tag"
             sequence="22" />
+
+        <!-- Menu Trobz Training > Test View Inheritance -->
+        <menuitem id="menu_trobz_training_task_view_inheritance"
+            name="Test View Inheritance"
+            parent="menu_trobz_training"
+            sequence="30" />
+
+        <!-- Menu Trobz Training > Configuration > Stages -->
+        <menuitem id="menu_trobz_training_task_view_inheritance_primary"
+            name="Tasks - Primary Inheritance"
+            parent="menu_trobz_training_task_view_inheritance"
+            action="action_tasks_test_inheritance_primary"
+            sequence="31" />
     </data>
 </openerp>
