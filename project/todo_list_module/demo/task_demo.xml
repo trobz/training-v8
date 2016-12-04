@@ -53,7 +53,7 @@
     </record>
 
     <record id="task_demo_5" model="task">
-        <field name="name">Read "A find balance"</field>
+        <field name="name">Read "A fine balance"</field>
         <field name="sequence" eval="50"/>
         <field name="priority">2</field>
         <field name="stage_id" ref="task_stage_demo_planning"/>
