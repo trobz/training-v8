@@ -9,4 +9,4 @@ Sample project for lab sessions at UIT
 - Trobz - UIT - Accounting Lesson 1&2*
 - Trobz - Project methodology*
 
-*: contact Trobz<contact@trobz.com> more these resources
+*: contact Trobz <contact@trobz.com> for these resources
