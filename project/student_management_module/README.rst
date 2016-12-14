@@ -12,6 +12,11 @@ See the requirements `here <https://docs.google.com/document/d/1Jkh4nGr6yDQoHJAy
 Note: this module is not yet completed. It serves as a base with some tips
 for the students.
 
+Common Mistakes after the first class
+=====================================
+
+See `UIT - Trobz - Simple Exercise - Student Information - Common Mistakes - 12/2016 <https://docs.google.com/spreadsheets/d/1MDbxYO5b8D8NnOvdBRdwcIiBNXuwWSzWSoPZLEaWvdg/edit#gid=0>`_.
+
 Installation
 ============
 
@@ -36,8 +41,7 @@ Known issues / Roadmap
 
 * This module is created with the sole purpose is to demonstrate the different
   elements in programming in Odoo. The design choice is, therefore, not the
-  best choice. For example, the model `todo_task` should derive from
-  `project_task`.
+  best choice.
 
 Bug Tracker
 ===========
