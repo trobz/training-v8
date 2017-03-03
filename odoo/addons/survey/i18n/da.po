@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:07+0000\n"
-"PO-Revision-Date: 2016-06-10 11:01+0000\n"
+"PO-Revision-Date: 2017-02-28 12:06+0000\n"
 "Last-Translator: Hans Henrik Gabelgaard <hhg@gabelgaard.org>\n"
 "Language-Team: Danish (http://www.transifex.com/odoo/odoo-8/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr ""
 #. module: survey
 #: view:survey.page:survey.survey_page_tree
 msgid "#Questions"
-msgstr ""
+msgstr "#Spørgsmål"
 
 #. module: survey
 #: code:addons/survey/survey.py:246 code:addons/survey/survey.py:543
@@ -1692,7 +1692,7 @@ msgstr ""
 #: view:survey.survey:survey.survey_kanban
 #: view:survey.user_input:survey.survey_user_input_search
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #. module: survey
 #: view:survey.survey:survey.survey_form
